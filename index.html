@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دانشنامه جامع و نهایی پرامپت‌های حرفه‌ای Grok</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #2E7D32;
+            --secondary-color: #ff9800;
+            --secondary-dark: #e65100;
+            --background-color: #f8f9fa;
+            --text-color: #333;
+            --header-color: #2c3e50;
+            --white-color: #fff;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+
+        h1 {
+            color: #1a1a1a;
+            font-size: 2.8em;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-color);
+            padding-bottom: 15px;
+            font-weight: 900;
+        }
+
+        h2 {
+            color: var(--header-color);
+            font-size: 2.2em;
+            margin: 60px 0 30px;
+            padding-right: 15px;
+            border-right: 5px solid var(--primary-color);
+            font-weight: 700;
+        }
+        
+        h3 {
+            color: #34495e;
+            font-size: 1.6em;
+            margin: 25px 0 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        h4 {
+            font-size: 1.3em;
+            color: var(--primary-dark);
+            margin-top: 25px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .intro-box {
+            background: #e8f5e9;
+            border-right: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0 40px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .collapsible {
+            background: #e8f5e9;
+            color: var(--primary-dark);
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: right;
+            outline: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 10px 0;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .collapsible:hover {
+            background: #c8e6c9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .collapsible.active {
+            background: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .collapsible::before {
+            content: '◀';
+            font-size: 0.8em;
+            transition: transform 0.3s;
+            margin-left: 10px;
+        }
+
+        .collapsible.active::before {
+            transform: rotate(-90deg);
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: var(--white-color);
+        }
+
+        .content-inner {
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f0f0f0;
+            border: 1px solid #444;
+            border-left: 4px solid var(--secondary-color);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            direction: ltr;
+            text-align: left;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .example-prompt {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-right: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .example-label {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .example-label-fa {
+            color: var(--primary-dark);
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .prompt-translation {
+            font-size: 0.95em;
+            color: #555;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-right: 3px solid #ccc;
+        }
+
+        .link-box {
+            background: #f0f4f8;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            border-right: 3px solid #3f51b5;
+            transition: all 0.3s;
+        }
+        .link-box a {
+            text-decoration: none;
+            color: #3f51b5;
+            font-weight: bold;
+        }
+        .link-box:hover {
+            background-color: #e3e8ee;
+            transform: translateX(-5px);
+        }
+
+        .principle-box {
+            background: var(--white-color);
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .principle-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .principle-number {
+            background: var(--primary-color);
+            color: var(--white-color);
+            min-width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-left: 15px;
+            font-size: 1.2em;
+        }
+        
+        strong {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>دانشنامه جامع و نهایی پرامپت‌های حرفه‌ای Grok</h1>
+
+        <div class="intro-box">
+            <p>در این راهنمای کامل، با اصول، تکنیک‌ها و مجموعه‌ای از بهترین پرامپت‌های آماده برای Grok آشنا می‌شوید تا از این ابزار قدرتمند نهایت استفاده را ببرید.</p>
+        </div>
+
+        <h2>قابلیت‌های کلیدی Grok و پرامپت‌های مرتبط</h2>
+        
+        <button class="collapsible">🔍 تحلیل محتوا</button>
+        <div class="content">
+            <div class="content-inner">
+                <p>Grok می‌تواند متن‌ها، اسناد و رشته‌توییت‌ها را تحلیل کرده و اطلاعات کلیدی را استخراج کند. در ادامه ۱۰ پرامپت کاربردی برای این قابلیت آمده است:</p>
+                <div class="example-prompt">
+                    <div class="example-label">۱. خلاصه سازی برای مدیران</div>
+                    <div class="code-block">Summarize the following article into 5 key bullet points, suitable for a busy executive.
+[Paste article text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">مقاله زیر را در ۵ نکته کلیدی، مناسب برای یک مدیر پرمشغله، خلاصه کن. (این پرامپت با تعیین مخاطب، لحن و فرمت خروجی را بهینه می‌کند.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۲. تحلیل احساسات مشتریان</div>
+                    <div class="code-block">Analyze the sentiment of the following customer reviews. Categorize each review as Positive, Negative, or Neutral, and provide a brief justification for each classification.
+[Paste reviews here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">احساسات نظرات مشتریان زیر را تحلیل کن. هر نظر را به عنوان مثبت، منفی یا خنثی دسته‌بندی کرده و برای هرکدام یک توجیه کوتاه ارائه بده. (پرامپتی عالی برای تحلیل بازخوردها.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۳. استخراج اطلاعات ساختاریافته</div>
+                    <div class="code-block">Extract all named entities (people, organizations, locations, dates) from the text below and list them under their respective categories.
+[Paste text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تمام موجودیت‌های نام‌دار (افراد، سازمان‌ها، مکان‌ها، تاریخ‌ها) را از متن زیر استخراج و آنها را زیر دسته‌بندی مربوطه لیست کن. (کاربردی برای استخراج سریع اطلاعات ساختاریافته از متن.)</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۴. تحلیل ساختار یک مناظره</div>
+                    <div class="code-block">Identify the main arguments and counter-arguments in this debate transcript. Present them in a two-column table.
+[Paste transcript here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">استدلال‌های اصلی و استدلال‌های متقابل را در این متن مناظره شناسایی کن. آن‌ها را در یک جدول دو ستونی نمایش بده. (برای درک ساختار یک بحث پیچیده.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۵. شناسایی لحن نوشتار</div>
+                    <div class="code-block">What is the writing tone of the following text? Is it formal, informal, academic, humorous, witty, etc.? Provide examples from the text to support your analysis.
+[Paste text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">لحن نوشتاری متن زیر چیست؟ آیا رسمی، غیررسمی، آکادمیک، طنزآمیز، هوشمندانه و... است؟ برای تایید تحلیلت، مثال‌هایی از متن بیاور. (برای تحلیل سبک و لحن محتوا.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۶. تولید سوالات متداول (FAQ)</div>
+                    <div class="code-block">Generate a list of 10 frequently asked questions (FAQs) and their concise answers based on the provided product documentation.
+[Paste documentation here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">بر اساس مستندات محصول ارائه‌شده، لیستی از ۱۰ سؤال متداول (FAQ) و پاسخ‌های مختصر آنها را تولید کن. (برای ساخت سریع بخش پشتیبانی وب‌سایت.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۷. تحلیل تطبیقی دو متن</div>
+                    <div class="code-block">Compare and contrast the two attached articles. Focus on their main claims, evidence used, author's perspective, and overall conclusions. Output as a markdown table.
+Article 1: [Paste text]
+Article 2: [Paste text]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">دو مقاله پیوست‌شده را مقایسه و تفاوت‌هایشان را بیان کن. روی ادعاهای اصلی، شواهد مورد استفاده، دیدگاه نویسنده و نتایج کلی تمرکز کن. خروجی را به صورت جدول مارک‌داون ارائه بده. (برای تحلیل تطبیقی عمیق.)</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۸. شناسایی مغالطه‌های منطقی</div>
+                    <div class="code-block">Identify the logical fallacies in the following argument. For each fallacy found, name it, define it, and explain why the text commits this fallacy with a direct quote.
+[Paste argument text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">مغالطه‌های منطقی را در استدلال زیر شناسایی کن. برای هر مغالطه، آن را نام ببر، تعریف کن و با یک نقل قول مستقیم توضیح بده چرا متن مرتکب این مغالطه شده است. (ابزاری قدرتمند برای تقویت تفکر انتقادی.)</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۹. خلاصه سازی گزارش بلند</div>
+                    <div class="code-block">Create a concise, one-page executive summary of the attached 50-page business report. The summary must cover the executive summary, key findings, financial highlights, and final recommendations.
+[Paste report text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک خلاصه مدیریتی یک صفحه‌ای و فشرده از گزارش تجاری ۵۰ صفحه‌ای پیوست تهیه کن. خلاصه باید شامل چکیده مدیریتی، یافته‌های کلیدی، نکات برجسته مالی و توصیه‌های نهایی باشد. (برای صرفه‌جویی در زمان.)</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۱۰. ترجمه فنی و تخصصی</div>
+                    <div class="code-block">Translate the following technical document from English to professional German, ensuring that all technical terms are translated accurately and consistently.
+[Paste document here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">سند فنی زیر را از انگلیسی به آلمانی حرفه‌ای ترجمه کن و اطمینان حاصل کن که تمام اصطلاحات فنی به درستی و به صورت یکپارچه ترجمه شده‌اند. (Grok می‌تواند به عنوان یک ابزار ترجمه پیشرفته نیز عمل کند.)</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="collapsible">🔎 جستجوی زنده (قدرت پلتفرم X)</button>
+        <div class="content">
+            <div class="content-inner">
+                <p>این قابلیت منحصربه‌فردترین ویژگی Grok است. با این پرامپت‌ها می‌توانید از داده‌های لحظه‌ای پلتفرم X بهره ببرید.</p>
+                <div class="example-prompt">
+                    <div class="example-label">۱. شناسایی موضوعات داغ</div>
+                    <div class="code-block">What are the latest trending topics on X in the tech community right now? Summarize the top 3 and explain why they are trending.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">در حال حاضر جدیدترین موضوعات داغ در جامعه فناوری در پلتفرم X چیست؟ ۳ مورد برتر را خلاصه و دلیل ترند شدنشان را توضیح بده. (برای آگاهی لحظه‌ای از نبض بازار.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۲. دریافت بازخورد واقعی محصول</div>
+                    <div class="code-block">Find me the most recent, credible user reactions on X to the new Tesla Cybertruck delivery event. Filter out spam, bot accounts, and promotional content.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">جدیدترین و معتبرترین واکنش‌های کاربران در X به رویداد تحویل سایبرتراک تسلا را برایم پیدا کن. اکانت‌های اسپم، ربات و محتوای تبلیغاتی را فیلتر کن. (برای دریافت بازخورد واقعی و بدون فیلتر.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۳. تحلیل گفتگوی عمومی</div>
+                    <div class="code-block">Summarize the main points of the public conversation happening right now under the hashtag #AIethics. Identify the key stakeholders and their primary arguments.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">نکات اصلی گفتگوی عمومی که هم‌اکنون زیر هشتگ #اخلاق_هوش_مصنوعی در جریان است را خلاصه کن. ذی‌نفعان کلیدی و استدلال‌های اصلی آنها را شناسایی کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۴. شناسایی افراد تاثیرگذار</div>
+                    <div class="code-block">Who are the most influential voices on X discussing quantum computing this week? List the top 3 accounts and a summary of their recent key insights.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">این هفته تأثیرگذارترین صداها در X که در مورد محاسبات کوانتومی بحث می‌کنند چه کسانی هستند؟ ۳ حساب برتر و خلاصه‌ای از بینش‌های کلیدی اخیر آنها را لیست کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۵. سنجش احساسات بازار مالی</div>
+                    <div class="code-block">What is the general sentiment on X towards the latest Federal Reserve interest rate decision? Provide specific examples of posts from verified financial analysts.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">احساسات عمومی در X نسبت به آخرین تصمیم فدرال رزرو در مورد نرخ بهره چیست؟ مثال‌های مشخصی از پست‌های تحلیلگران مالی تایید شده ارائه بده.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۶. خبرنگاری شهروندی و اخبار فوری</div>
+                    <div class="code-block">Find breaking news from citizen journalists on X about the ongoing wildfires in California. Verify the information by cross-referencing with at least two other sources if possible.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">اخبار فوری از خبرنگاران شهروند در X در مورد آتش‌سوزی‌های جنگلی در کالیفرنیا را پیدا کن. در صورت امکان، اطلاعات را با حداقل دو منبع دیگر راستی‌آزمایی کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۷. گزارش مشکلات و باگ‌های نرم‌افزار</div>
+                    <div class="code-block">What are some common issues or bugs users are reporting on X about the latest update for the Slack application? Categorize them into UI, Performance, and Functionality.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">مشکلات یا باگ‌های رایجی که کاربران در X در مورد آخرین به‌روزرسانی اپلیکیشن Slack گزارش می‌دهند چیست؟ آنها را به دسته‌های رابط کاربری، عملکرد و کارایی تقسیم کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۸. تحلیل واکنش طرفداران</div>
+                    <div class="code-block">Generate a real-time summary of the online fan reaction to the series finale of 'Game of Thrones'. Include reactions to major plot points and overall satisfaction levels.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">خلاصه‌ای لحظه‌ای از واکنش آنلاین طرفداران به قسمت پایانی سریال «بازی تاج و تخت» تولید کن. واکنش‌ها به نقاط اصلی داستان و سطح رضایت کلی را شامل شود.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۹. بررسی استراتژی‌های بازاریابی رقبا</div>
+                    <div class="code-block">How are marketing professionals on X reacting to Google's latest algorithm update? Summarize the key strategies they are discussing to adapt.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">متخصصان بازاریابی در X چه واکنشی به آخرین به‌روزرسانی الگوریتم گوگل نشان می‌دهند؟ استراتژی‌های کلیدی که برای تطبیق با آن بحث می‌کنند را خلاصه کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۱۰. یافتن نمونه‌های موفق بازاریابی</div>
+                    <div class="code-block">Find recent examples of brands successfully using humor and witty responses in their marketing on X. Provide links to the posts and a brief analysis of why they were effective.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">مثال‌های جدیدی از برندهایی که با موفقیت از طنز و پاسخ‌های هوشمندانه در بازاریابی خود در X استفاده کرده‌اند پیدا کن. لینک پست‌ها و تحلیل مختصری از دلیل موفقیت آنها ارائه بده.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="collapsible">💻 ایجاد کد و نمودار</button>
+        <div class="content">
+            <div class="content-inner">
+                 <p>Grok می‌تواند کدهای کاربردی بنویسد، کد شما را دیباگ کند و حتی داده‌ها را به نمودار تبدیل کند.</p>
+                <div class="example-prompt">
+                    <div class="example-label">۱. اسکریپت تحلیل داده</div>
+                    <div class="code-block">Write a Python script using the Pandas library to read a CSV file named 'sales_data.csv', group the data by 'Region', and calculate the total 'Sales' for each region.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک اسکریپت پایتون با استفاده از کتابخانه Pandas بنویس که یک فایل CSV به نام 'sales_data.csv' را بخواند، داده‌ها را بر اساس 'منطقه' گروه‌بندی کند و مجموع 'فروش' را برای هر منطقه محاسبه کند.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۲. دیباگ کردن کد</div>
+                    <div class="code-block">I have this JavaScript code that is not working. It's supposed to fetch data from an API and display it, but I get a 'TypeError'. Can you identify the bug and explain how to fix it?
+[Paste buggy code here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">این کد جاوااسکریپت من کار نمی‌کند. قرار است داده‌ها را از یک API بگیرد و نمایش دهد، اما خطای 'TypeError' دریافت می‌کنم. می‌توانی باگ را شناسایی کرده و توضیح دهی چطور آن را برطرف کنم؟</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۳. ساخت نمودار تعاملی</div>
+                    <div class="code-block">Generate the HTML and JavaScript code for a bar chart using Chart.js. The chart should display the following data: { "Q1": 500, "Q2": 750, "Q3": 600, "Q4": 900 }. Label the axes as 'Quarter' and 'Revenue'. The chart should be responsive.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">کد HTML و جاوااسکریپت برای یک نمودار میله‌ای با استفاده از Chart.js تولید کن. نمودار باید داده‌های زیر را نمایش دهد: ... محورها را به عنوان 'فصل' و 'درآمد' نام‌گذاری کن. نمودار باید واکنش‌گرا باشد.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۴. نوشتن کوئری پایگاه داده</div>
+                    <div class="code-block">Write a SQL query to select all users from the 'Users' table who have signed up in the last 30 days and have made at least one purchase from the 'Orders' table.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک کوئری SQL بنویس تا تمام کاربرانی را از جدول 'Users' انتخاب کند که در ۳۰ روز گذشته ثبت‌نام کرده‌اند و حداقل یک خرید از جدول 'Orders' داشته‌اند.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۵. تبدیل کد بین زبان‌ها</div>
+                    <div class="code-block">Convert the following Python function into its equivalent in JavaScript (Node.js). Ensure the logic remains identical.
+[Paste Python function here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تابع پایتون زیر را به معادل آن در جاوااسکریپت (Node.js) تبدیل کن. اطمینان حاصل کن که منطق آن دقیقاً یکسان باقی بماند.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۶. توضیح کد پیچیده</div>
+                    <div class="code-block">Explain this block of Regex code line by line. What is it trying to match?
+/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">این قطعه کد Regex را خط به خط توضیح بده. چه چیزی را تلاش می‌کند مطابقت دهد؟</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۷. تولید داده‌های آزمایشی</div>
+                    <div class="code-block">Generate a JSON array of 10 fictional user objects. Each object should have a 'name', 'email', 'age' (between 18 and 65), and a boolean 'isActive' property.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک آرایه JSON از ۱۰ شیء کاربر ساختگی تولید کن. هر شیء باید دارای 'نام'، 'ایمیل'، 'سن' (بین ۱۸ تا ۶۵ سال) و یک خاصیت بولین 'isActive' باشد.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۸. نوشتن تست‌های واحد (Unit Tests)</div>
+                    <div class="code-block">Write a unit test for the following JavaScript function using the Jest testing framework. Cover both the success case and an edge case where the input is invalid.
+[Paste function here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک تست واحد برای تابع جاوااسکریپت زیر با استفاده از فریم‌ورک تست Jest بنویس. هم حالت موفقیت‌آمیز و هم یک حالت مرزی که ورودی نامعتبر است را پوشش بده.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۹. ایجاد یک کامپوننت ساده وب</div>
+                    <div class="code-block">Create the HTML, CSS, and JavaScript for a simple, reusable "accordion" component. When a title is clicked, its corresponding content should expand, and any other open content should collapse.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">کدهای HTML، CSS و جاوااسکریپت را برای یک کامپوننت ساده و قابل استفاده مجدد "آکاردئون" ایجاد کن. وقتی روی یک عنوان کلیک می‌شود، محتوای مربوط به آن باید باز شود و هر محتوای باز دیگری باید بسته شود.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۱۰. بهینه‌سازی عملکرد کد</div>
+                    <div class="code-block">I have a Python loop that is very slow. Can you suggest ways to optimize it for better performance? Maybe using vectorization with NumPy or a more efficient algorithm?
+[Paste slow loop code here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">من یک حلقه پایتون دارم که بسیار کند است. می‌توانی راه‌هایی برای بهینه‌سازی آن جهت عملکرد بهتر پیشنهاد دهی؟ شاید با استفاده از برداری‌سازی با NumPy یا یک الگوریتم کارآمدتر؟</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">🎨 تولید تصویر</button>
+        <div class="content">
+            <div class="content-inner">
+                 <p>تولید تصویر توسط مدل Aurora انجام می‌شود. پرامپت‌های دقیق و توصیفی، نتایج شگفت‌انگیزی به همراه دارند.</p>
+                <div class="example-prompt">
+                    <div class="example-label">۱. صحنه سینمایی فوتورئالیستی</div>
+                    <div class="code-block">Photorealistic image of a futuristic cyberpunk city street at night, neon signs reflecting on the wet asphalt, flying cars in the background, cinematic lighting, ultra-detailed, 8K, wide-angle lens.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تصویر فوتورئالیستی از یک خیابان شهری سایبرپانکی در شب، تابلوهای نئونی که روی آسفالت خیس منعکس شده‌اند، ماشین‌های پرنده در پس‌زمینه، نورپردازی سینمایی، با جزئیات فوق‌العاده، 8K، لنز واید.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۲. نقاشی هنری</div>
+                    <div class="code-block">A tranquil scene of a Japanese Zen garden in the style of a watercolor painting. A cherry blossom tree is in full bloom, with petals gently falling onto a koi pond. Soft, diffused morning light.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">صحنه‌ای آرام از یک باغ ذن ژاپنی به سبک نقاشی آبرنگ. یک درخت گیلاس در شکوفه کامل است و گلبرگ‌ها به آرامی روی یک حوضچه ماهی کوی می‌ریزند. نور صبحگاهی نرم و پراکنده.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۳. طراحی مفهومی کاراکتر</div>
+                    <div class="code-block">Concept art of a wise, ancient dragon with scales that look like cracked obsidian and glowing emerald eyes. He is perched atop a snowy mountain peak, looking contemplative. Fantasy, digital painting style.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">طراحی مفهومی از یک اژدهای پیر و خردمند با پولک‌هایی شبیه ابسیدین ترک‌خورده و چشمانی از زمرد درخشان. او بر قله کوهی برفی نشسته و در حال تفکر است. سبک فانتزی، نقاشی دیجیتال.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۴. هنر انتزاعی</div>
+                    <div class="code-block">Abstract art representing the concept of 'chaos and order'. Use a mix of sharp, geometric lines and chaotic, swirling paint splatters. A color palette of deep blues, black, and vibrant gold.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">هنر انتزاعی که مفهوم «هرج و مرج و نظم» را به تصویر می‌کشد. از ترکیبی از خطوط تیز و هندسی و پاشیدگی‌های رنگ آشفته و چرخان استفاده کن. پالت رنگی از آبی‌های تیره، سیاه و طلایی درخشان.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۵. طراحی لوگو مینیمال</div>
+                    <div class="code-block">Minimalist logo design for a coffee brand named 'Aura'. A single continuous line that forms a coffee cup and a subtle letter 'A'. Black and white, vector style.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">طراحی لوگوی مینیمالیستی برای یک برند قهوه به نام «Aura». یک خط ممتد که یک فنجان قهوه و حرف 'A' را به صورت ظریف تشکیل می‌دهد. سیاه و سفید، سبک وکتور.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۶. تصویرسازی برای کتاب کودک</div>
+                    <div class="code-block">A charming children's book illustration of a friendly fox wearing a small backpack, talking to a wise old owl in a whimsical, enchanted forest. Warm, friendly colors, storybook style.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک تصویرسازی جذاب کتاب کودک از یک روباه مهربان با کوله‌پشتی کوچک، در حال صحبت با یک جغد پیر و دانا در یک جنگل جادویی و خیال‌انگیز. رنگ‌های گرم و دوستانه، سبک کتاب داستان.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۷. عکاسی محصول</div>
+                    <div class="code-block">Product photography of a luxury wristwatch on a dark marble surface. The lighting should be dramatic, highlighting the watch's metallic texture and details. Macro shot, professional studio lighting.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">عکاسی محصول از یک ساعت مچی لوکس روی سطح مرمری تیره. نورپردازی باید دراماتیک باشد و بافت فلزی و جزئیات ساعت را برجسته کند. شات ماکرو، نورپردازی استودیویی حرفه‌ای.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۸. معماری آینده‌نگر</div>
+                    <div class="code-block">Architectural render of a futuristic sustainable skyscraper that integrates vertical gardens and waterfalls into its facade. The building has organic, flowing lines. Photorealistic, daytime shot.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">رندر معماری از یک آسمان‌خراش پایدار آینده‌نگر که باغ‌های عمودی و آبشارها را در نمای خود ادغام کرده است. ساختمان دارای خطوط ارگانیک و روان است. فوتورئالیستی، شات روز.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۹. هنر پیکسلی (Pixel Art)</div>
+                    <div class="code-block">16-bit pixel art of a cozy scene inside a wizard's library. Bookshelves filled with ancient tomes, a crackling fireplace, and a cat sleeping on a rug. Retro video game aesthetic.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">هنر پیکسلی ۱۶ بیتی از صحنه‌ای دنج در کتابخانه یک جادوگر. قفسه‌های کتاب پر از کتاب‌های باستانی، یک شومینه روشن و گربه‌ای که روی فرش خوابیده است. زیبایی‌شناسی بازی‌های ویدیویی قدیمی.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۱۰. طراحی داخلی</div>
+                    <div class="code-block">Interior design of a modern Scandinavian living room. Neutral color palette, minimalist furniture, large windows with natural light, and lots of green plants. Photorealistic, bright and airy feel.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">طراحی داخلی یک اتاق نشیمن مدرن اسکاندیناوی. پالت رنگ خنثی، مبلمان مینیمال، پنجره‌های بزرگ با نور طبیعی و گیاهان سبز فراوان. فوتورئالیستی، با حسی روشن و دلباز.</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="collapsible">🎬 تبدیل تصویر به ویدیو</button>
+        <div class="content">
+            <div class="content-inner">
+                 <p>این قابلیت به تصاویر ثابت شما جان می‌بخشد. در پرامپت، نوع حرکت، جهت و شدت آن را توصیف کنید.</p>
+                <div class="example-prompt">
+                    <div class="example-label">۱. حرکت ابرها (بعد از آپلود عکس منظره)</div>
+                    <div class="code-block">Make the clouds in the sky move slowly from left to right. Add a subtle shimmering effect to the lake at the bottom.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">ابرها را در آسمان به آرامی از چپ به راست حرکت بده. یک افکت درخشش ملایم به دریاچه در پایین اضافه کن.</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۲. زوم روی پرتره (بعد از آپلود پرتره)</div>
+                    <div class="code-block">Create a slow zoom-in effect focusing on the person's eyes. Make their hair gently sway as if in a light breeze.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک افکت زوم آهسته ایجاد کن که روی چشمان شخص تمرکز کند. کاری کن موهایش به آرامی تکان بخورد، انگار در یک نسیم ملایم قرار دارد.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۳. متحرک‌سازی آب (بعد از آپلود عکس آبشار)</div>
+                    <div class="code-block">Animate the waterfall so the water is flowing downwards realistically. Add a gentle mist effect at the base of the waterfall.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">آبشار را متحرک کن تا آب به صورت واقع‌گرایانه به سمت پایین جریان یابد. یک افکت مِه ملایم در پایین آبشار اضافه کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۴. افکت Parallax (بعد از آپلود عکس لایه‌ای)</div>
+                    <div class="code-block">Create a 3D parallax effect. The foreground mountain should move slightly faster than the background mountains as the camera pans slowly to the right.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک افکت پارالاکس سه‌بعدی ایجاد کن. کوه پیش‌زمینه باید کمی سریع‌تر از کوه‌های پس‌زمینه حرکت کند در حالی که دوربین به آرامی به سمت راست حرکت می‌کند.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۵. جان بخشیدن به نقاشی (بعد از آپلود نقاشی)</div>
+                    <div class="code-block">Bring this oil painting to life. Make the flame of the candle flicker gently and create subtle light shifts on the objects around it.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">به این نقاشی رنگ روغن جان ببخش. شعله شمع را به آرامی لرزان کن و تغییرات نوری ظریفی روی اشیاء اطراف آن ایجاد کن.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۶. حرکت خودرو (بعد از آپلود عکس خیابان)</div>
+                    <div class="code-block">Animate the red car to drive smoothly across the frame from right to left. Make the streetlights flicker on as it passes.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">ماشین قرمز را متحرک کن تا به نرمی از راست به چپ در کادر حرکت کند. کاری کن چراغ‌های خیابان هنگام عبور آن روشن شوند.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۷. افکت باران (بعد از آپلود عکس شهر)</div>
+                    <div class="code-block">Add a realistic rain effect to this city scene. Include ripples in the puddles on the street and reflections of the neon lights.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک افکت باران واقع‌گرایانه به این صحنه شهری اضافه کن. موج‌های کوچکی در چاله‌های آب خیابان و انعکاس نورهای نئونی را شامل شود.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۸. چرخش محصول (بعد از آپلود عکس محصول)</div>
+                    <div class="code-block">Create a smooth 360-degree rotation of the product, showing all its angles. The camera should remain stationary.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک چرخش ۳۶۰ درجه نرم از محصول ایجاد کن که تمام زوایای آن را نشان دهد. دوربین باید ثابت بماند.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۹. شکوفه زدن گل (بعد از آپلود عکس غنچه)</div>
+                    <div class="code-block">Animate this flower bud opening up into a full bloom over 4 seconds. The movement should be graceful and organic.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">این غنچه گل را متحرک کن تا در طول ۴ ثانیه به یک شکوفه کامل تبدیل شود. حرکت باید زیبا و ارگانیک باشد.</p>
+                </div>
+                 <div class="example-prompt">
+                    <div class="example-label">۱۰. افکت دوربین لرزان (بعد از آپلود عکس اکشن)</div>
+                    <div class="code-block">Add a subtle handheld camera shake effect to the image to give it a more dynamic, action-packed feel.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک افکت لرزش دوربین دستی ملایم به تصویر اضافه کن تا حسی پویاتر و پر از اکشن به آن بدهد.</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="collapsible">🎤 تعامل صوتی</button>
+        <div class="content">
+            <div class="content-inner">
+                 <p>این یک قابلیت در اپلیکیشن موبایل است و مبتنی بر پرامپت متنی نیست. شما می‌توانید دستورات را به صورت صوتی بیان کنید. این ویژگی برای تعامل سریع و بدون نیاز به تایپ کردن عالی است.</p>
+                <h4>مثال‌هایی از دستورات صوتی:</h4>
+                <ol>
+                    <li>"آخرین اخبار فناوری چیه؟ خلاصه‌اش رو برام بخون."</li>
+                    <li>"یه یادآوری برای ساعت ۵ عصر تنظیم کن که با دوستم تماس بگیرم."</li>
+                    <li>"نزدیک‌ترین کافی‌شاپ با امتیاز بالای ۴ ستاره کجاست؟"</li>
+                    <li>"این متن رو به اسپانیایی ترجمه کن: Hello, how are you?"</li>
+                    <li>"برای پست اینستاگرامم در مورد سفر به ایتالیا، چند تا کپشن خلاقانه و جذاب پیشنهاد بده."</li>
+                    <li>"یه جوک در مورد برنامه‌نویس‌ها بگو."</li>
+                    <li>"فرق بین هوش مصنوعی مولد و هوش مصنوعی تحلیلی رو به زبان ساده برام توضیح بده."</li>
+                    <li>"پایتخت استرالیا کجاست؟"</li>
+                    <li>"یه برنامه سفر ۳ روزه برای بازدید از پاریس برام بریز."</li>
+                    <li>"به Grok بگو در حالت طنزآمیز و کنایه‌آمیز به من جواب بده."</li>
+                </ol>
+            </div>
+        </div>
+        
+        
+
+        <div class="section" style="margin-top: 30px; text-align: center; padding: 40px; background: #f8f9fa; border-radius: 15px;">
+            <h2 style="border: none; text-align: center;">📚 منابع اضافی و رسمی</h2>
+            <p>برای اطلاعات بیشتر، یادگیری عمیق‌تر و همراه شدن با جامعه کاربران، از لینک‌های زیر استفاده کنید:</p>
+            <div style="margin-top: 20px;">
+                <div class="link-box">
+                    <a href="https://x.ai/" target="_blank" rel="noopener noreferrer">وب‌سایت رسمی xAI: اطلاعات رسمی و آخرین اخبار</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://grok.x.ai/" target="_blank" rel="noopener noreferrer">صفحه رسمی Grok: راهنماها و معرفی قابلیت‌ها</a>
+                </div>
+                <div class="link-box">
+                    <a href="https://github.com/xPOURY4" target="_blank" rel="noopener noreferrer">MyGithub</a>
+                </div>
+                 <div class="link-box">
+                    <a href="https://x.com/TheRealPourya" target="_blank" rel="noopener noreferrer">My X (Twitter)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" style="margin-top: 50px; background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%); color: white; padding: 30px; border-radius: 15px;">
+            <h2 style="color: white; border-right-color: white;">🎯 نتیجه‌گیری: ۵ قانون طلایی برای یک پرامپت حرفه‌ای</h2>
+            <p style="font-size: 1.1em; line-height: 2;">مهندسی پرامپت، ابرقدرت شما در تعامل با هوش مصنوعی است. این مهارت، تفاوت میان گرفتن یک پاسخ معمولی و خلق یک شاهکار است. برای نوشتن پرامپت‌های واقعاً حرفه‌ای که نتایج شگفت‌انگیز تولید می‌کنند، این پنج قانون طلایی را همیشه به خاطر بسپارید:</p>
+            
+            <ol style="font-size: 1.1em; line-height: 2; padding-right: 25px; list-style-type: decimal-leading-zero;">
+                <li style="margin-bottom: 15px;">
+                    <strong>فرمانده باشید، نه درخواست‌کننده:</strong>
+                    <p style="font-size: 0.9em; padding-right: 15px; margin-top: 5px;">با هوش مصنوعی صریح و قاطع صحبت کنید. از افعال امری استفاده کنید (بنویس، تحلیل کن، بساز). به جای اینکه بپرسید "آیا می‌توانی...؟"، مستقیماً به او بگویید "این کار را انجام بده...". این کار ابهام را از بین می‌برد و مدل را روی انجام دقیق وظیفه متمرکز می‌کند.</p>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>زمینه (Context)، پادشاه است:</strong>
+                    <p style="font-size: 0.9em; padding-right: 15px; margin-top: 5px;">یک پرامپت بدون زمینه، مانند تیری در تاریکی است. همیشه چهار عنصر کلیدی را مشخص کنید: <strong>نقش</strong> (تو یک تحلیلگر مالی هستی)، <strong>مخاطب</strong> (برای مبتدیان توضیح بده)، <strong>هدف</strong> (هدف، متقاعد کردن خواننده برای خرید است) و <strong>فرمت</strong> (خروجی باید یک جدول مارک‌داون باشد).</p>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>یک فیل را لقمه لقمه بخورید:</strong>
+                    <p style="font-size: 0.9em; padding-right: 15px; margin-top: 5px;">برای وظایف پیچیده، هرگز کل درخواست را در یک پرامپت خلاصه نکنید. آن را به مراحل منطقی و کوچک‌تر تقسیم کنید. هوش مصنوعی را قدم به قدم در فرآیند راهنمایی کنید (اول این کار را بکن، سپس بر اساس خروجی آن، کار بعدی را انجام بده). این روش دقت را به شدت افزایش می‌دهد.</p>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>با مثال، الگو را آموزش دهید (Few-Shot):</strong>
+                    <p style="font-size: 0.9em; padding-right: 15px; margin-top: 5px;">سریع‌ترین راه برای رسیدن به یک سبک یا فرمت خاص، نشان دادن آن به مدل است. به جای توصیف کردن، یک یا دو مثال از ورودی و خروجی دلخواه خود را در پرامپت قرار دهید. این کار به Grok الگو را به طور مستقیم آموزش می‌دهد و از آزمون و خطا جلوگیری می‌کند.</p>
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>گفتگو کنید، اصلاح کنید و تکرار کنید:</strong>
+                    <p style="font-size: 0.9em; padding-right: 15px; margin-top: 5px;">پرامپت اول شما، شروع یک گفتگوست، نه پایان آن. خروجی را به دقت تحلیل کنید. اگر کامل نیست، با سوالات پیگیری آن را اصلاح کنید ("عالی بود، حالا آن را رسمی‌تر کن" یا "می‌توانی روی نکته سوم بیشتر توضیح دهی؟"). یک پرامپت حرفه‌ای نتیجه‌ی یک فرآیند تکرارشونده و هوشمندانه است.</p>
+                </li>
+            </ol>
+             <p style="font-size: 1.1em; line-height: 2; margin-top: 20px;">تسلط بر این اصول، قدرت واقعی Grok را برای شما آشکار می‌کند و آن را از یک ابزار ساده به یک **شریک خلاق و تحلیلگر** تبدیل خواهد کرد.</p>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const collapsibles = document.querySelectorAll('.collapsible');
+            collapsibles.forEach(button => {
+                button.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                });
+            });
+
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.principle-box, .section, .collapsible, .example-prompt, .link-box').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+
+            document.querySelectorAll('.code-block').forEach(block => {
+                block.style.cursor = 'pointer';
+                block.title = 'برای کپی کردن کلیک کنید';
+                
+                block.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const text = this.innerText;
+                    navigator.clipboard.writeText(text).then(() => {
+                        const originalText = this.innerText;
+                        this.innerText = 'کپی شد!';
+                        this.style.background = '#4CAF50';
+                        setTimeout(() => {
+                           this.innerText = originalText;
+                           this.style.background = '#2d2d2d';
+                        }, 1200);
+                    });
+                });
+            });
+
+            const backToTop = document.createElement('button');
+            backToTop.innerHTML = '⬆️';
+            backToTop.setAttribute('aria-label', 'بازگشت به بالا');
+            backToTop.style.cssText = `
+                position: fixed; bottom: 30px; left: 30px; width: 50px; height: 50px;
+                border-radius: 50%; background: var(--primary-color); color: white; border: none;
+                font-size: 24px; cursor: pointer; opacity: 0; transition: opacity 0.3s, transform 0.3s;
+                z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.3); visibility: hidden;
+            `;
+            document.body.appendChild(backToTop);
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            });
+
+            backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            backToTop.addEventListener('mouseenter', () => backToTop.style.transform = 'scale(1.1)');
+            backToTop.addEventListener('mouseleave', () => backToTop.style.transform = 'scale(1)');
+        });
+    </script>
+</body>
+</html>
