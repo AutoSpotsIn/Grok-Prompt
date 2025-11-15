@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دانشنامه جامع و نهایی پرامپت‌های حرفه‌ای Grok</title>
+    <title>بهترین پرامپت های گروک: دانشنامه جامع پرامپت های حرفه ای Grok توسط TheRealPourya</title>
+    <meta name="description" content="راهنمای کامل بهترین پرامپت های گروک برای تحلیل محتوا، جستجوی زنده، ایجاد کد و تولید تصویر. مهندسی پرامپت حرفه ای Grok برای حداکثر بهره وری - توسط TheRealPourya.">
+    <meta name="keywords" content="پرامپت گروک, بهترین پرامپت های گروک, مهندسی پرامپت گروک, Grok prompts, best Grok prompts, powerful Grok prompts, Grok AI SEO, Grok prompt guide, TheRealPourya">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&family=IRANSans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #4CAF50;
-            --primary-dark: #2E7D32;
-            --secondary-color: #ff9800;
-            --secondary-dark: #e65100;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --header-color: #2c3e50;
-            --white-color: #fff;
-            --border-color: #e0e0e0;
+            --primary-color: #007BFF; 
+            --primary-dark: #0056b3; 
+            --secondary-color: #FFC107; 
+            --secondary-dark: #FFA000; 
+            --background-color: #f4f7fa; 
+            --text-color: #212529; 
+            --header-color: #1e3a8a; 
+            --white-color: #ffffff;
+            --border-color: #dee2e6;
+            --accent-color: #28a745; 
+            --shadow-color: rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -31,107 +35,123 @@
         }
 
         body {
-            font-family: 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'IRANSans', 'Vazirmatn', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             background: var(--background-color);
             color: var(--text-color);
             line-height: 1.8;
             padding: 20px;
+            font-size: 16px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1300px; 
             margin: 0 auto;
             background: var(--white-color);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 6px 25px var(--shadow-color); 
         }
 
         h1 {
-            color: #1a1a1a;
-            font-size: 2.8em;
-            margin-bottom: 30px;
+            color: var(--header-color);
+            font-size: 3em;
+            margin-bottom: 40px;
             text-align: center;
             border-bottom: 4px solid var(--primary-color);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             font-weight: 900;
+            letter-spacing: -0.5px; 
         }
 
         h2 {
             color: var(--header-color);
-            font-size: 2.2em;
-            margin: 60px 0 30px;
-            padding-right: 15px;
-            border-right: 5px solid var(--primary-color);
+            font-size: 2.4em;
+            margin: 70px 0 35px;
+            padding-right: 20px;
+            border-right: 6px solid var(--primary-color);
             font-weight: 700;
+            position: relative;
+            transition: color 0.3s ease; 
         }
-        
+
+        h2:hover {
+            color: var(--primary-dark);
+        }
+
         h3 {
-            color: #34495e;
-            font-size: 1.6em;
-            margin: 25px 0 15px;
+            color: #495057;
+            font-size: 1.8em;
+            margin: 30px 0 20px;
             display: flex;
             align-items: center;
         }
 
         h4 {
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: var(--primary-dark);
-            margin-top: 25px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #e0e0e0;
+            margin-top: 30px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
         }
 
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
+            font-weight: 400;
         }
 
         .intro-box {
-            background: #e8f5e9;
+            background: linear-gradient(to right, #e9f5ff, #d4eaff); 
             border-right: 4px solid var(--primary-color);
-            padding: 20px;
-            margin: 20px 0 40px;
-            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0 50px;
+            border-radius: 12px;
             text-align: center;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .intro-box:hover {
+            transform: translateY(-5px);
         }
 
         .collapsible {
-            background: #e8f5e9;
-            color: var(--primary-dark);
+            background: linear-gradient(to right, var(--primary-color), var(--primary-dark)); 
+            color: var(--white-color);
             cursor: pointer;
-            padding: 18px;
+            padding: 20px;
             width: 100%;
             border: none;
             text-align: right;
             outline: none;
-            font-size: 1.2em;
+            font-size: 1.3em;
             font-weight: bold;
-            border-radius: 8px;
-            margin: 10px 0;
-            transition: all 0.3s ease-in-out;
+            border-radius: 12px;
+            margin: 15px 0;
+            transition: all 0.4s ease-in-out;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 12px var(--shadow-color);
         }
 
         .collapsible:hover {
-            background: #c8e6c9;
-            transform: translateY(-2px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, var(--primary-dark), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--shadow-color);
         }
 
         .collapsible.active {
-            background: var(--primary-color);
+            background: var(--primary-dark);
             color: var(--white-color);
-            border-radius: 8px 8px 0 0;
+            border-radius: 12px 12px 0 0;
         }
 
         .collapsible::before {
             content: '◀';
-            font-size: 0.8em;
-            transition: transform 0.3s;
-            margin-left: 10px;
+            font-size: 1em;
+            transition: transform 0.4s;
+            margin-left: 15px;
         }
 
         .collapsible.active::before {
@@ -141,111 +161,149 @@
         .content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.4s ease-out;
+            transition: max-height 0.5s ease-out;
             background: var(--white-color);
+            border-radius: 0 0 12px 12px;
+            border: 1px solid var(--border-color);
+            border-top: none;
         }
 
         .content-inner {
-            padding: 25px;
-            border: 1px solid var(--border-color);
-            border-top: none;
-            border-radius: 0 0 8px 8px;
+            padding: 30px;
         }
 
         .code-block {
-            background: #2d2d2d;
-            color: #f0f0f0;
-            border: 1px solid #444;
-            border-left: 4px solid var(--secondary-color);
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 6px;
+            background: #282c34; 
+            color: #abb2bf;
+            border: 1px solid #3e4451;
+            border-left: 5px solid var(--secondary-color);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
             font-family: 'Consolas', 'Courier New', monospace;
             direction: ltr;
             text-align: left;
             overflow-x: auto;
             white-space: pre-wrap;
             word-wrap: break-word;
+            font-size: 0.95em;
+            transition: background 0.3s ease;
+        }
+
+        .code-block:hover {
+            background: #21252b;
         }
 
         .example-prompt {
-            background: #fafafa;
-            border: 1px solid #eee;
-            border-right: 4px solid var(--secondary-color);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-right: 5px solid var(--secondary-color);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+
+        .example-prompt:hover {
+            transform: translateY(-3px);
         }
 
         .example-label {
-            color: #333;
+            color: var(--header-color);
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
+
         .example-label-fa {
             color: var(--primary-dark);
             font-weight: bold;
-            margin-top: 15px;
-            margin-bottom: 5px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-size: 1.1em;
         }
+
         .prompt-translation {
             font-size: 0.95em;
-            color: #555;
-            background: #f8f9fa;
-            padding: 10px;
-            border-radius: 5px;
-            border-right: 3px solid #ccc;
+            color: #495057;
+            background: #f1f3f5;
+            padding: 15px;
+            border-radius: 8px;
+            border-right: 4px solid #ced4da;
         }
 
         .link-box {
-            background: #f0f4f8;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 6px;
-            border-right: 3px solid #3f51b5;
-            transition: all 0.3s;
+            background: #e9f5ff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-right: 4px solid var(--primary-color);
+            transition: all 0.4s;
         }
+
         .link-box a {
             text-decoration: none;
-            color: #3f51b5;
+            color: var(--primary-color);
             font-weight: bold;
+            transition: color 0.3s ease;
         }
+
         .link-box:hover {
-            background-color: #e3e8ee;
-            transform: translateX(-5px);
+            background-color: #d4eaff;
+            transform: translateX(-8px);
+        }
+
+        .link-box a:hover {
+            color: var(--primary-dark);
         }
 
         .principle-box {
             background: var(--white-color);
             border: 1px solid var(--border-color);
-            padding: 25px;
-            margin: 25px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
         .principle-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px var(--shadow-color);
         }
 
         .principle-number {
             background: var(--primary-color);
             color: var(--white-color);
-            min-width: 40px;
-            height: 40px;
+            min-width: 45px;
+            height: 45px;
             border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            margin-left: 15px;
-            font-size: 1.2em;
+            margin-left: 20px;
+            font-size: 1.3em;
         }
-        
+
         strong {
             font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+            .collapsible {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
@@ -334,6 +392,42 @@ Article 2: [Paste text]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">سند فنی زیر را از انگلیسی به آلمانی حرفه‌ای ترجمه کن و اطمینان حاصل کن که تمام اصطلاحات فنی به درستی و به صورت یکپارچه ترجمه شده‌اند. (Grok می‌تواند به عنوان یک ابزار ترجمه پیشرفته نیز عمل کند.)</p>
                 </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۱. تحلیل روندهای مالی</div>
+                    <div class="code-block">Analyze the financial trends in the following quarterly report. Identify upward/downward patterns in revenue, expenses, and profit margins over the last four quarters. Visualize the key metrics in a simple ASCII chart.
+    [Paste report text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">روندهای مالی در گزارش فصلی زیر را تحلیل کن. الگوهای صعودی/نزولی در درآمد، هزینه‌ها و حاشیه سود طی چهار فصل گذشته را شناسایی کن. معیارهای کلیدی را در یک چارت ساده ASCII نمایش بده. (برای تحلیل سریع داده‌های مالی کسب‌وکارها.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۲. بررسی محتوای حقوقی</div>
+                    <div class="code-block">Review the following legal contract for potential risks and ambiguities. Highlight any clauses that could lead to disputes, and suggest rephrasing for clarity.
+    [Paste contract text here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">قرارداد حقوقی زیر را برای ریسک‌ها و ابهامات احتمالی بررسی کن. بندهایی که ممکن است منجر به اختلاف شوند را برجسته کن و پیشنهاد بازنویسی برای وضوح بده. (کاربردی برای وکلا و مدیران قراردادها.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۳. استخراج نکات کلیدی از مصاحبه</div>
+                    <div class="code-block">Extract the top 5 insights from this interview transcript. Categorize them by theme (e.g., innovation, challenges) and rate their impact on a scale of 1-10.
+    [Paste transcript here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">۵ بینش برتر را از متن مصاحبه زیر استخراج کن. آنها را بر اساس تم (مانند نوآوری، چالش‌ها) دسته‌بندی کن و تاثیرشان را در مقیاس ۱-۱۰ امتیاز بده. (برای پردازش سریع مصاحبه‌های شغلی یا تحقیقاتی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۴. تحلیل رقابتی محصولات</div>
+                    <div class="code-block">Compare the features of these two product descriptions. Create a pros/cons table for each, focusing on price, usability, and performance.
+    Product A: [Paste description]
+    Product B: [Paste description]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">ویژگی‌های دو توصیف محصول زیر را مقایسه کن. جدولی از مزایا/معایب برای هر کدام بساز، با تمرکز روی قیمت، کاربری و عملکرد. (برای تصمیم‌گیری خرید یا تحلیل بازار.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۵. شناسایی الگوهای رفتاری</div>
+                    <div class="code-block">Identify behavioral patterns in the following user logs. Group similar actions and suggest potential user personas based on frequency and sequence.
+    [Paste logs here]</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">الگوهای رفتاری را در لاگ‌های کاربر زیر شناسایی کن. اقدامات مشابه را گروه‌بندی کن و بر اساس فراوانی و توالی، پرسوناهای کاربر احتمالی پیشنهاد بده. (برای تحلیل داده‌های اپلیکیشن‌ها و وب‌سایت‌ها.)</p>
+                </div>
             </div>
         </div>
         
@@ -401,6 +495,36 @@ Article 2: [Paste text]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">مثال‌های جدیدی از برندهایی که با موفقیت از طنز و پاسخ‌های هوشمندانه در بازاریابی خود در X استفاده کرده‌اند پیدا کن. لینک پست‌ها و تحلیل مختصری از دلیل موفقیت آنها ارائه بده.</p>
                 </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۱. تحلیل روندهای آموزشی</div>
+                    <div class="code-block">What are the emerging trends in online education discussed on X this month? Summarize the top 3 and include quotes from educators or influencers.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">روندهای نوظهور در آموزش آنلاین که این ماه در X بحث شده چیست؟ ۳ مورد برتر را خلاصه کن و نقل قول‌هایی از مربیان یا اینفلوئنسرها اضافه کن. (برای معلمان و توسعه‌دهندگان آموزشی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۲. ردیابی کمپین‌های اجتماعی</div>
+                    <div class="code-block">Track the progress of the #ClimateAction campaign on X over the last week. Report on engagement metrics, key participants, and overall impact.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">پیشرفت کمپین #ClimateAction را در X طی هفته گذشته ردیابی کن. معیارهای تعامل، شرکت‌کنندگان کلیدی و تاثیر کلی را گزارش بده. (برای فعالان اجتماعی و بازاریابان.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۳. تحلیل نظرات سیاسی</div>
+                    <div class="code-block">Summarize the political discourse on X regarding the upcoming elections. Identify polarized views and cite examples from verified accounts.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">گفتمان سیاسی در X در مورد انتخابات پیش رو را خلاصه کن. دیدگاه‌های دوقطبی را شناسایی کن و مثال‌هایی از اکانت‌های تاییدشده بیاور. (برای تحلیلگران سیاسی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۴. جستجوی نکات بهداشتی</div>
+                    <div class="code-block">Find recent health tips shared by medical professionals on X about managing stress. Filter for evidence-based advice and summarize the top 5.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">نکات بهداشتی اخیر به اشتراک گذاشته‌شده توسط متخصصان پزشکی در X در مورد مدیریت استرس را پیدا کن. برای توصیه‌های مبتنی بر شواهد فیلتر کن و ۵ مورد برتر را خلاصه کن. (برای سلامت و wellness.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۵. رصد تغییرات صنعت</div>
+                    <div class="code-block">What industry changes in renewable energy are being discussed on X by experts this quarter? Provide a timeline of key events mentioned.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تغییرات صنعتی در انرژی‌های تجدیدپذیر که این فصل توسط کارشناسان در X بحث شده چیست؟ یک تایم‌لاین از رویدادهای کلیدی ذکرشده ارائه بده. (برای مهندسان و سرمایه‌گذاران.)</p>
+                </div>
             </div>
         </div>
         
@@ -417,7 +541,7 @@ Article 2: [Paste text]</div>
                 <div class="example-prompt">
                     <div class="example-label">۲. دیباگ کردن کد</div>
                     <div class="code-block">I have this JavaScript code that is not working. It's supposed to fetch data from an API and display it, but I get a 'TypeError'. Can you identify the bug and explain how to fix it?
-[Paste buggy code here]</div>
+    [Paste buggy code here]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">این کد جاوااسکریپت من کار نمی‌کند. قرار است داده‌ها را از یک API بگیرد و نمایش دهد، اما خطای 'TypeError' دریافت می‌کنم. می‌توانی باگ را شناسایی کرده و توضیح دهی چطور آن را برطرف کنم؟</p>
                 </div>
@@ -436,14 +560,14 @@ Article 2: [Paste text]</div>
                 <div class="example-prompt">
                     <div class="example-label">۵. تبدیل کد بین زبان‌ها</div>
                     <div class="code-block">Convert the following Python function into its equivalent in JavaScript (Node.js). Ensure the logic remains identical.
-[Paste Python function here]</div>
+    [Paste Python function here]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">تابع پایتون زیر را به معادل آن در جاوااسکریپت (Node.js) تبدیل کن. اطمینان حاصل کن که منطق آن دقیقاً یکسان باقی بماند.</p>
                 </div>
                 <div class="example-prompt">
                     <div class="example-label">۶. توضیح کد پیچیده</div>
                     <div class="code-block">Explain this block of Regex code line by line. What is it trying to match?
-/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</div>
+    /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">این قطعه کد Regex را خط به خط توضیح بده. چه چیزی را تلاش می‌کند مطابقت دهد؟</p>
                 </div>
@@ -456,7 +580,7 @@ Article 2: [Paste text]</div>
                 <div class="example-prompt">
                     <div class="example-label">۸. نوشتن تست‌های واحد (Unit Tests)</div>
                     <div class="code-block">Write a unit test for the following JavaScript function using the Jest testing framework. Cover both the success case and an edge case where the input is invalid.
-[Paste function here]</div>
+    [Paste function here]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">یک تست واحد برای تابع جاوااسکریپت زیر با استفاده از فریم‌ورک تست Jest بنویس. هم حالت موفقیت‌آمیز و هم یک حالت مرزی که ورودی نامعتبر است را پوشش بده.</p>
                 </div>
@@ -469,9 +593,39 @@ Article 2: [Paste text]</div>
                  <div class="example-prompt">
                     <div class="example-label">۱۰. بهینه‌سازی عملکرد کد</div>
                     <div class="code-block">I have a Python loop that is very slow. Can you suggest ways to optimize it for better performance? Maybe using vectorization with NumPy or a more efficient algorithm?
-[Paste slow loop code here]</div>
+    [Paste slow loop code here]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">من یک حلقه پایتون دارم که بسیار کند است. می‌توانی راه‌هایی برای بهینه‌سازی آن جهت عملکرد بهتر پیشنهاد دهی؟ شاید با استفاده از برداری‌سازی با NumPy یا یک الگوریتم کارآمدتر؟</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۱. ساخت API ساده</div>
+                    <div class="code-block">Write a Node.js Express API endpoint that accepts a POST request with user data (name, email), validates the email, and saves it to a MongoDB database.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک endpoint API با Node.js Express بنویس که درخواست POST با داده‌های کاربر (نام، ایمیل) را بپذیرد، ایمیل را اعتبارسنجی کند و آن را در دیتابیس MongoDB ذخیره کند. (برای توسعه‌دهندگان بک‌اند.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۲. کد امنیتی</div>
+                    <div class="code-block">Implement a Python function to hash passwords securely using bcrypt. Include salt generation and verification logic.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک تابع پایتون برای هش کردن امن رمزهای عبور با استفاده از bcrypt پیاده‌سازی کن. تولید salt و منطق اعتبارسنجی را شامل شود. (برای امنیت اپلیکیشن‌ها.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۳. ایجاد داشبورد داده</div>
+                    <div class="code-block">Generate React code for a simple dashboard component that displays a line chart using Recharts, fetching data from a JSON API.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">کد React برای یک کامپوننت داشبورد ساده تولید کن که یک چارت خطی با Recharts نمایش دهد و داده‌ها را از یک API JSON بگیرد. (برای فرانت‌اند داشبوردهای داده.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۴. اسکریپت اتوماسیون</div>
+                    <div class="code-block">Write a Bash script to automate backups of a directory to a remote server using rsync, with logging and error handling.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک اسکریپت Bash برای اتوماسیون پشتیبان‌گیری از یک دایرکتوری به سرور ریموت با استفاده از rsync بنویس، با لاگینگ و مدیریت خطا. (برای ادمین‌های سیستم.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۵. کد یادگیری ماشین</div>
+                    <div class="code-block">Create a simple scikit-learn Python script to train a linear regression model on a dataset (provide sample data) and predict new values.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک اسکریپت ساده پایتون با scikit-learn برای آموزش مدل رگرسیون خطی روی یک دیتاست (داده نمونه بده) و پیش‌بینی مقادیر جدید بساز. (برای مبتدیان ML.)</p>
                 </div>
             </div>
         </div>
@@ -540,6 +694,36 @@ Article 2: [Paste text]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">طراحی داخلی یک اتاق نشیمن مدرن اسکاندیناوی. پالت رنگ خنثی، مبلمان مینیمال، پنجره‌های بزرگ با نور طبیعی و گیاهان سبز فراوان. فوتورئالیستی، با حسی روشن و دلباز.</p>
                 </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۱. گرافیک اینفوگرافیک</div>
+                    <div class="code-block">Infographic-style image illustrating the steps of a startup funding process. Use icons, arrows, and a clean, corporate color scheme in blue and white, vector art, high resolution.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تصویر به سبک اینفوگرافیک که مراحل فرآیند تامین مالی استارت‌آپ را نشان دهد. از آیکون‌ها، فلش‌ها و طرح رنگی تمیز شرکتی آبی و سفید استفاده کن، هنر وکتور، رزولوشن بالا. (برای محتوای آموزشی کسب‌وکار.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۲. تصویر علمی</div>
+                    <div class="code-block">Scientific illustration of a DNA double helix unwinding during replication. Accurate biology details, labeled parts, in a digital diagram style with vibrant colors.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تصویرسازی علمی از مارپیچ دوگانه DNA که در حال باز شدن طی تکثیر است. جزئیات دقیق بیولوژیکی، بخش‌های برچسب‌دار، به سبک دیاگرام دیجیتال با رنگ‌های زنده. (برای مقالات علمی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۳. طراحی پوستر تبلیغاتی</div>
+                    <div class="code-block">Promotional poster for a tech conference: Bold typography, futuristic elements like circuits and holograms, dark background with neon accents, 4K resolution.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">پوستر تبلیغاتی برای یک کنفرانس فناوری: تایپوگرافی جسورانه، عناصر آینده‌نگر مانند مدارها و هولوگرام‌ها، پس‌زمینه تیره با accents نئونی، رزولوشن 4K. (برای بازاریابی رویدادها.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۴. تصویر طبیعت‌گرایانه</div>
+                    <div class="code-block">Hyper-realistic image of an endangered tiger in a misty jungle, capturing its intense gaze, detailed fur texture, natural lighting, wildlife photography style.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">تصویر هایپررئالیستی از یک ببر در خطر انقراض در جنگل مه‌آلود، با ثبت نگاه شدید، بافت خز دقیق، نورپردازی طبیعی، سبک عکاسی حیات وحش. (برای کمپین‌های محیط زیستی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۵. هنر دیجیتال مفهومی</div>
+                    <div class="code-block">Conceptual digital art depicting artificial intelligence as a glowing neural network brain emerging from a human silhouette, surreal style, purple and gold tones.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">هنر دیجیتال مفهومی که هوش مصنوعی را به عنوان یک مغز شبکه عصبی درخشان که از silhouette انسانی بیرون می‌آید نشان دهد، سبک سوررئال، تن‌های بنفش و طلایی. (برای محتوای科技 و فلسفی.)</p>
+                </div>
             </div>
         </div>
 
@@ -607,6 +791,36 @@ Article 2: [Paste text]</div>
                     <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
                     <p class="prompt-translation">یک افکت لرزش دوربین دستی ملایم به تصویر اضافه کن تا حسی پویاتر و پر از اکشن به آن بدهد.</p>
                 </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۱. انیمیشن محصول چرخشی (بعد از آپلود عکس محصول)</div>
+                    <div class="code-block">Animate a 360-degree spin of the gadget, with highlights appearing on key features as it rotates. Keep the background static.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک چرخش ۳۶۰ درجه از gadget را متحرک کن، با برجسته شدن ویژگی‌های کلیدی هنگام چرخش. پس‌زمینه را ثابت نگه دار. (برای نمایش محصولات در e-commerce.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۲. افکت باد در طبیعت (بعد از آپلود عکس جنگل)</div>
+                    <div class="code-block">Add wind effects to the trees, making leaves rustle and branches sway gently. Include subtle particle effects for falling leaves.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">افکت باد به درختان اضافه کن، تا برگ‌ها خش‌خش کنند و شاخه‌ها به آرامی تکان بخورند. افکت ذرات برای برگ‌های ریزان ملایم اضافه کن. (برای ویدیوهای طبیعت‌گرا.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۳. حرکت دوربین پانوراما (بعد از آپلود عکس منظره)</div>
+                    <div class="code-block">Create a panoramic camera pan from left to right across the landscape, with foreground elements moving faster for depth effect.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">یک پان دوربین پانوراما از چپ به راست در منظره ایجاد کن، با عناصر پیش‌زمینه که سریع‌تر حرکت کنند برای افکت عمق. (برای تورهای مجازی.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۴. انیمیشن آتش (بعد از آپلود عکس شومینه)</div>
+                    <div class="code-block">Animate the fire to crackle and flicker realistically, with embers floating upwards and light casting dynamic shadows on the walls.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">آتش را متحرک کن تا واقع‌گرایانه ترق و لرزه کند، با ذرات خاکستر که به بالا شناور شوند و نور سایه‌های پویا روی دیوارها بیندازد. (برای ویدیوهای cozy.)</p>
+                </div>
+                <div class="example-prompt">
+                    <div class="example-label">۱۵. افکت زمان‌دار (بعد از آپلود عکس شهر)</div>
+                    <div class="code-block">Transition the scene from day to night over 5 seconds, with lights turning on gradually and the sky changing colors.</div>
+                    <div class="example-label-fa">ترجمه و توضیح فارسی:</div>
+                    <p class="prompt-translation">صحنه را از روز به شب در طول ۵ ثانیه انتقال بده، با چراغ‌هایی که به تدریج روشن شوند و آسمان که رنگ عوض کند. (برای تایم‌لپس‌های شهری.)</p>
+                </div>
             </div>
         </div>
         
@@ -626,6 +840,11 @@ Article 2: [Paste text]</div>
                     <li>"پایتخت استرالیا کجاست؟"</li>
                     <li>"یه برنامه سفر ۳ روزه برای بازدید از پاریس برام بریز."</li>
                     <li>"به Grok بگو در حالت طنزآمیز و کنایه‌آمیز به من جواب بده."</li>
+                    <li>"یک برنامه تمرینی ۷ روزه برای کاهش وزن مبتدیان برام طراحی کن."</li>
+                    <li>"آخرین قیمت سهام اپل رو چک کن و تحلیل کوتاهی از روندش بده."</li>
+                    <li>"یه داستان کوتاه علمی-تخیلی در مورد سفر در زمان برام تعریف کن."</li>
+                    <li>"چطور می‌تونم مهارت‌های برنامه‌نویسی‌ام رو بهبود بدم؟ پیشنهاد کتاب یا دوره بده."</li>
+                    <li>"وضعیت آب و هوا برای تهران در هفته آینده چطوره؟ خلاصه‌اش رو بگو."</li>
                 </ol>
             </div>
         </div>
@@ -651,7 +870,7 @@ Article 2: [Paste text]</div>
             </div>
         </div>
 
-        <div class="section" style="margin-top: 50px; background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%); color: white; padding: 30px; border-radius: 15px;">
+        <div class="section" style="margin-top: 50px; background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); color: white; padding: 30px; border-radius: 15px;">
             <h2 style="color: white; border-right-color: white;">🎯 نتیجه‌گیری: ۵ قانون طلایی برای یک پرامپت حرفه‌ای</h2>
             <p style="font-size: 1.1em; line-height: 2;">مهندسی پرامپت، ابرقدرت شما در تعامل با هوش مصنوعی است. این مهارت، تفاوت میان گرفتن یک پاسخ معمولی و خلق یک شاهکار است. برای نوشتن پرامپت‌های واقعاً حرفه‌ای که نتایج شگفت‌انگیز تولید می‌کنند، این پنج قانون طلایی را همیشه به خاطر بسپارید:</p>
             
